@@ -5,7 +5,9 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "C:/ProgramData/chocolatey/lib/eigen/include/Eigen",
-                "C:/ProgramData/chocolatey/lib/eigen/include/Eigen/src"
+                "C:/ProgramData/chocolatey/lib/eigen/include/Eigen/src",
+                "helpers/matplotplusplus/source/matplot/",
+                "helpers/matplotplusplus/source/"
             ],
             "defines": [
                 "_DEBUG",

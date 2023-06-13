@@ -137,5 +137,4 @@ struct Cholesky {
       sum += log(el[i][i]);
     return 2.*sum;
   }
-
 };

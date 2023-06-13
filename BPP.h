@@ -20,18 +20,19 @@
 #include <numeric>
 
 
-int frequency = 500;
+double frequency = 100;
 float timespan = 0.1;
+double deltaT = 1/frequency;
 int Nsteps = frequency*timespan;
-int Niters = 500;
+int Niters = 100;
 
 std::random_device rd {};
 std::mt19937 randflt {rd()}; 
 
-const int operator_m = 2;
-const double max_acc =1; 
+const double operator_m = 2;
+const double max_acc = 2; 
 
-
+std::vector<float> object_likelihoods; // for calculating most likely object based on data - merge with object posterior?
 
 const std::vector<int> object_size = {2,2,2};
 // # object locations are defined at their center
