@@ -1,0 +1,7 @@
+set style increment default
+set samples 21, 21
+set isosamples 11, 11
+set style data lines
+set title "3D test plot" 
+
+splot x*y with points
