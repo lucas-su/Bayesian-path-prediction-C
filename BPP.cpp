@@ -14,6 +14,6 @@ int main(){
     initial_pos << 0,0,0;
     initial_vel << 0,0,0;
     Model* model = new Model(initial_pos, initial_vel, operator_m, object_list);
-    plot(model);
+    
 }
 
