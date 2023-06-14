@@ -1,22 +1,22 @@
-#include "BPP.h"
-#include "Model.h"
-#include <cmath>
+// #include "BPP.h"
+// #include "Model.h"
+// #include <cmath>
 #include <matplot/matplot.h>
 // #include "gnuplot-iostream.h"
 
-int plot(Model* model){
-    // Gnuplot gp("script.gp");
+int plot(){
+    // Gnuplot gp("C:\\Program\ Files\\gnuplot\\bin\\wgnuplot.exe");
     // gp << "plot '-' with vectors title 'pts_A', '-' with vectors title 'pts_B'\n";
-    // using namespace matplot;
-    // auto t = iota(0, pi / 20, 10 * pi);
-    // auto xt = transform(t, [](auto t) { return sin(t); });
-    // auto yt = transform(t, [](auto t) { return cos(t); });
-    // auto l = plot3(xt, yt, t, "-ob");
-    // l->marker_size(10);
-    // l->marker_face_color("#D9FFFF");
-    // xlabel("x(t)");
-    // ylabel("y(t)");
-    // zlabel("t");
-    // show();
+    using namespace matplot;
+    std::vector<double> x = linspace(0, 2 * pi);
+    std::vector<double> y = transform(x, [](auto x) { return sin(x); });
+
+    plot(x, y, "-o");
+    hold(on);
+    plot(x, transform(y, [](auto y) { return -y; }), "--xr");
+    plot(x, transform(x, [](auto x) { return x / pi - 1.; }), "-:gs");
+    plot({1.0, 0.7, 0.4, 0.0, -0.4, -0.7, -1}, "k");
+
+    show();
     return 0;
 }
